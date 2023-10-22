@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Salary Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='files/css/style.css')}}">
+</head>
+
+<body class="container1">
+    <div class="container d-flex flex-column justify-content-center align-items-center align-self-center"
+        style="height: 100vh;">
+        <div class="shadow">
+            <div class="head1 text-center mx-auto">
+                <h1>Salary Prediction</h1><br>
+            </div>
+            <div class="container">
+                <form method="POST">
+                    <div class="form-group">
+                        <label class="form-group1" for="age">Age:</label>
+                        <input class="form-control" type="text" name="age" required><br>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label class="form-group1" for="experience">Years of Experience:</label>
+                        <input class="form-control" type="text" name="experience" required>
+                    </div><br>
+
+                    <div class="form-group">
+
+                        <label class="form-group1" for="job">Job Title:</label>
+                        <select class="form-control" id="job" name="job" required>
+                            <option value="" disabled selected>Select Job Title</option>
+                            {% for title in unique_job_titles %}
+                            <option value="{{ title }}">{{ title }}</option>
+                            {% endfor %}
+                        </select>
+                    </div><br>
+
+                    <div class="form-group">
+
+                        <label class="form-group1" for="education">Education Level:</label>
+                        <select class="form-control" id="education" name="education">
+                            <option value="" disabled selected>Select Education</option>
+                            {% for title1 in unique_education %}
+                            <option value="{{ title1 }}">{{ title1 }}</option>
+                            {% endfor %}
+                        </select>
+                    </div><br>
+
+
+                    <div class="d-grid col-6 mx-auto">
+                        <button class="btn1" type="submit" value="Predict Salary">Predict</button>
+                    </div>
+                </form><br>
+            </div>
+            <div class="ans form-control"  >
+                {% if predicted_salary %}
+                <p>Prediction: ${{ predicted_salary }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    
+    
+</body>
+
+</html>

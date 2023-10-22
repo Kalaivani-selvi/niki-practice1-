@@ -1,0 +1,39 @@
+.container1 {
+    background: linear-gradient(45deg, rgba(255, 0, 0, 0.7), rgba(0, 0, 255, 0.5));
+}
+
+.shadow {
+    padding: 60px;
+    background: linear-gradient(30deg, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5));
+}
+.btn1 {
+    background-color:  #c8d41d; 
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+    height: 40px;
+    
+    
+    }
+    
+    .btn1:hover{
+        border:1px solid #93d615;
+        background-color:white;
+        color:#AF0A59;
+    }
+    
+
+    .form-group1{
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: 500;
+
+    }
+
+    .ans {
+        font-size: 20px;
+        font-weight: 600;
+
+    }
